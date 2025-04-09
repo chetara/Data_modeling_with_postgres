@@ -31,12 +31,16 @@ song_table_create = ("""CREATE TABLE  IF NOT EXISTS songs
  year INT CHECK (year >= 0),
  duration FLOAT)""")
 
-artist_table_create = ("""CREATE TABLE  IF NOT EXISTS artists(
-	artist_id VARCHAR CONSTRAINT artist_pk PRIMARY KEY,
-	name VARCHAR,
-	location VARCHAR,
-	latitude DECIMAL(9,6),
-	longitude DECIMAL(9,6)""")
+artist_table_create = ("""
+CREATE TABLE IF NOT EXISTS artists(
+    artist_id VARCHAR(255) CONSTRAINT artist_pk PRIMARY KEY,
+    name VARCHAR(255),
+    location VARCHAR(255),
+    latitude DECIMAL(9,6),
+    longitude DECIMAL(9,6)
+);
+""")
+
 
 time_table_create = ("""CREATE TABLE IF NOT EXISTS  time(
 	start_time  TIMESTAMP CONSTRAINT time_pk PRIMARY KEY,
