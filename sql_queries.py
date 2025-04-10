@@ -64,20 +64,19 @@ user_table_insert = (
        ON CONFLICT (user_id) 
        DO UPDATE SET level = EXCLUDED.level """)
 
+# Artist location, latitude and longitude might change and need to be updated.
+artist_table_insert = ("""insert into artists(
+                            artist_id, name, location, latitude, longitude
+                            ) VALUES (%s, %s, %s, %s, %s)
+                            ON CONFLICT DO NOTHING;
+""")
+
 song_table_insert = (
     """INSERT INTO songs (song_id, title, artist_id, year, duration) 
     VALUES (%s, %s, %s, %s, %s) 
     ON CONFLICT (song_id) DO NOTHING """)
 
 
-# Artist location, latitude and longitude might change and need to be updated.
-artist_table_insert = (
-    """INSERT INTO artists (artist_id, name, location, latitude, longitude) 
-    VALUES (%s, %s, %s, %s, %s) 
-    ON CONFLICT (artist_id) 
-    DO UPDATE SET location = EXCLUDED.location,
-                  latitude = EXCLUDED.latitude,
-                  longitude = EXCLUDED.longitude""")
 
 time_table_insert = (
     """INSERT INTO time VALUES (%s, %s, %s, %s, %s, %s, %s) 
