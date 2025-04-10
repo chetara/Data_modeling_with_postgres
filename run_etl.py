@@ -88,7 +88,7 @@ def process_log_file(cur, filepath):
 
 def main():
     # Connect to database
-    conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=postgres password=chetara1995")
+    conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=postgres password=*****")
     cur = conn.cursor()
 
     # Process song_data first (dimension tables)
