@@ -7,7 +7,7 @@ def create_database():
         host="127.0.0.1",
         database="postgres",       # Or any existing database name
         user="postgres",
-        password="chetara1995"
+        password="******"
     )
     conn.set_session(autocommit=True)
     cur = conn.cursor()
@@ -30,7 +30,7 @@ def create_database():
         host="127.0.0.1",
         dbname="sparkifydb",  # Use the new database name
         user="postgres",
-        password="chetara1995"
+        password="******"
     )
     cur = conn.cursor()
 
